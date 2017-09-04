@@ -9,10 +9,7 @@ def stock_picker(stocks)
   stocks.each_with_index do |i_stock, i_index|
     # Start j-loop from i_index, since you have to buy before you sell
     stocks[i_index..-1].each_with_index do |j_stock, j_index|
-      puts "i_index = #{i_index}. j_index = #{j_index}."
-      puts "Is #{j_stock} - #{i_stock} == #{j_stock - i_stock} greater than #{difference_max}?"
       if j_stock - i_stock > difference_max
-        puts "Yes it is!"
         difference_max = j_stock - i_stock
         i_min = i_index
         # For j_max I add i_index, since the j-loop starts from i_index (and therefor not 0)
